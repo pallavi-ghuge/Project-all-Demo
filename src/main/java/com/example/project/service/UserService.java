@@ -1,14 +1,18 @@
 package com.example.project.service;
 
-import com.example.project.model.User;
-import org.springframework.stereotype.Service;
+import com.example.project.model.Users;
 
 import java.util.List;
 
 public interface UserService {
 
-    List<User> getAll();
-    User save(User user);
+    List<Users> getAll();
+    Users save(Users user);
+    void updateById(Users users,Integer id);
+    void deleteById(Integer id);
+    List<Users> getById(Integer id);
+
+
 
 
 }
