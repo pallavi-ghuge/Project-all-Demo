@@ -25,19 +25,19 @@ public class CoursesController {
 
         return coursesService.save(courses);
     }
-    @DeleteMapping("/course/{id}")     //http://localhost:7890/course/101
-    public void deleteUser(@PathVariable("id") Integer id){
-        coursesService.deleteById(id);
+    @DeleteMapping("/course/{courseId}")     //http://localhost:7890/course/101
+    public void deleteUser(@PathVariable("courseId") Integer courseId){
+        coursesService.deleteById(courseId);
     }
 
-    @GetMapping("/course/{id}")   //http://localhost:7890/course/1
-    public List<Courses> getuser(@PathVariable("id") Integer id){
-        List<Courses>  list= coursesService.getById(id);
+    @GetMapping("/course/{courseId}")   //http://localhost:7890/course/1
+    public List<Courses> getuser(@PathVariable("courseId") Integer courseId){
+        List<Courses>  list= coursesService.getById(courseId);
         return list;
     }
-    @PutMapping("/course/{id}")    //http://localhost:7890/course/101
-    public void update(@RequestBody Courses courses,@PathVariable("id") Integer id){
-        coursesService.updateById(courses,id);
+    @PutMapping("/course/{courseId}")    //http://localhost:7890/course/101
+    public void update(@RequestBody Courses courses,@PathVariable("courseId") Integer courseId){
+        coursesService.updateById(courses,courseId);
     }
 }
 
