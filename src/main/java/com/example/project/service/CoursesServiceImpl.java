@@ -8,37 +8,38 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CoursesServiceImpl implements CoursesService{
+public class CourseServiceImpl implements CourseService {
     @Autowired
-    CoursesRepository coursesRepository;
+    private CoursesRepository coursesRepository;
+
     @Override
     public List<Courses> getAll() {
-        List<Courses> list=coursesRepository.findAll();
+        List<Courses> list = coursesRepository.findAll();
         return list;
     }
 
     @Override
     public Courses save(Courses courses) {
-        Courses courses1=coursesRepository.save(courses);
+        Courses courses1 = coursesRepository.save(courses);
         return courses1;
     }
 
     @Override
-    public void updateById(Courses courses, Integer id) {
-        courses.setId(id);
+    public void updateById(Courses courses, Integer courseId) {
+        courses.setCourseId(courseId);
         coursesRepository.save(courses);
 
     }
 
     @Override
-    public void deleteById(Integer id) {
-        coursesRepository.deleteById(Long.valueOf(id));
+    public void deleteById(Integer courseId) {
+        coursesRepository.deleteById(Long.valueOf(courseId));
 
     }
 
     @Override
-    public List<Courses> getById(Integer id) {
-        List<Courses> list=coursesRepository.findAllById(id);
-        return null;
+    public List<Courses> getById(Integer courseId) {
+        List<Courses> list = coursesRepository.findAllById(courseId);
+        return list;
     }
 }
