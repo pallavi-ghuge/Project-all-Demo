@@ -5,11 +5,11 @@ import com.example.project.model.Users;
 
 import java.util.List;
 
-public interface CoursesService {
+public interface CourseService {
     List<Courses> getAll();
     Courses save(Courses courses);
-    void updateById(Courses courses,Integer id);
-    void deleteById(Integer id);
-    List<Courses> getById(Integer id);
+    void updateById(Courses courses,Integer courseId);
+    void deleteById(Integer courseId);
+    List<Courses> getById(Integer courseId);
 
 }
